@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="bg-gray-100 dark:bg-gray-900 dark:text-white text-gray-600 h-screen flex overflow-hidden text-sm">
+        <!-- Sidebar -->
+        <div
+            class=" bg-white dark:bg-gray-900 dark:border-gray-800 w-20 flex-shrink-0 border-r border-gray-200 flex-col hidden sm:flex">
+            <div class="h-16 text-blue-500 flex items-center justify-center">
+                <svg class="w-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33">
+                    <path fill="currentColor" fill-rule="evenodd"
+                        d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="flex mx-auto flex-grow mt-4 flex-col text-gray-400 space-y-4">
+                <button class="h-10 w-12 dark:text-gray-500 rounded-md flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" class="h-5" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </button>
+                <button
+                    class="h-10 w-12 dark:bg-gray-700 dark:text-white rounded-md flex items-center justify-center bg-blue-100 text-blue-500">
+                    <svg viewBox="0 0 24 24" class="h-5" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                </button>
+                <button class="h-10 w-12 dark:text-gray-500 rounded-md flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" class="h-5" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                        <line x1="12" y1="11" x2="12" y2="17"></line>
+                        <line x1="9" y1="14" x2="15" y2="14"></line>
+                    </svg>
+                </button>
+                <button class="h-10 w-12 dark:text-gray-500 rounded-md flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" class="h-5" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Left Side -->
+        <div class="flex-grow overflow-hidden h-full flex flex-col">
+            <!-- Ini Head Contain -->
+            <div class="h-16 py-8 lg:flex w-full border-b border-gray-200 dark:border-gray-800 hidden px-10">
+                <div class="flex h-full text-gray-600 dark:text-gray-400">
+                    <a href="#"
+                        class="cursor-pointer h-full border-b-2 border-transparent inline-flex items-center mr-8">Company</a>
+                    <a href="#"
+                        class="cursor-pointer h-full border-b-2 border-blue-500 text-blue-500 dark:text-white dark:border-white inline-flex mr-8 items-center">Users</a>
+                    <a href="#"
+                        class="cursor-pointer h-full border-b-2 border-transparent inline-flex items-center mr-8">Expense
+                        Centres</a>
+                    <a href="#"
+                        class="cursor-pointer h-full border-b-2 border-transparent inline-flex items-center">Currency
+                        Exchange</a>
+                </div>
+                <div class="ml-auto flex items-center space-x-7">
+                    <button class="h-8 px-3 rounded-md shadow text-white bg-blue-500">Deposit</button>
+
+                    <button class="flex items-center">
+                        <span class="relative flex-shrink-0">
+                            <img class="w-7 h-7 rounded-full"
+                                src="https://images.unsplash.com/photo-1521587765099-8835e7201186?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                                alt="profile" />
+                            <span
+                                class="absolute right-0 -mb-0.5 bottom-0 w-2 h-2 rounded-full bg-green-500 border border-white dark:border-gray-900"></span>
+                        </span>
+                        <span class="ml-2">Admin 1</span>
+                        <svg viewBox="0 0 24 24" class="w-4 ml-1 flex-shrink-0" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+
+                    <div class="relative">
+                        <div id="button-profile-dashboard"
+                            class="inline-flex items-center overflow-hidden rounded-md border bg-white">
+                            <a id="edit-button" href="#"
+                                class="border-e px-4 py-2 text-sm/none text-gray-600 hover:bg-gray-50 hover:text-gray-700">
+                                Edit
+                            </a>
+
+                            <button id="menu-button"
+                                class="h-full p-2 text-gray-600 hover:bg-gray-50 hover:text-gray-700">
+                                <span class="sr-only">Menu</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div id="dropdown-down"
+                            class="hidden absolute end-0 z-10 mt-2 w-56 divide-y divide-gray-100 rounded-md border border-gray-100 bg-white shadow-lg"
+                            role="menu">
+                            <div class="p-2">
+                                <a href="#"
+                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                                    role="menuitem">
+                                    View on Storefront
+                                </a>
+
+                                <a href="#"
+                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                                    role="menuitem">
+                                    View Warehouse Info
+                                </a>
+
+                                <a href="#"
+                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                                    role="menuitem">
+                                    Duplicate Product
+                                </a>
+
+                                <a href="#"
+                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                                    role="menuitem">
+                                    Unpublish Product
+                                </a>
+                            </div>
+
+                            <div class="p-2">
+                                <form method="POST" action="#">
+                                    <button type="submit"
+                                        class="flex w-full items-center gap-2 rounded-lg px-4 py-2 text-sm text-red-700 hover:bg-red-50"
+                                        role="menuitem">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
+
+                                        Delete Product
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar User -->
+            <div id="" class="flex-grow flex overflow-x-hidden">
+
+                <div class="flex-grow bg-white dark:bg-gray-900 overflow-y-auto">
+                    <div
+                        class="z-40 sm:px-7 sm:pt-7 px-4 py-2 flex flex-row justify-between items-center w-full border-b border-gray-200 bg-white dark:bg-gray-900 dark:text-white dark:border-gray-800 sticky top-0">
+                        <div class="flex gap-4 items-center">
+                            <!-- Button  -->
+                            <a href="../index.html"
+                                class="flex cursor-pointer items-center justify-center px-[10px] py-2 rounded-full bg-slate-400 text-white font-semibold"><i
+                                    class="fa-solid fa-chevron-left"></i> </a>
+                            <div class="text-2xl font-medium text-black">Create User</div>
+                        </div>
+                        <div>1</div>
+
+                    </div>
+
+                    <!-- Class Form -->
+                    <div class="z-10 m-6 p-6 border-slate-200 border-2 rounded-xl grid grid-rows-5">
+                        <div id="name-user" class="">
+                            <div class="my-4 font-bold text-black text-base">Name <span
+                                    class="fon-bold text-red-600">*</span></div>
+                            <div class="gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                                <label for="UserEmail"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                                    <input type="email" id="UserEmail" placeholder="Email"
+                                        class="peer pl-[12px] pt-2 h-8 w-full border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" />
+
+                                    <span
+                                        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
+                                        First Name
+                                    </span>
+                                </label>
+                                <label for="UserEmail"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                                    <input type="email" id="UserEmail" placeholder="Email"
+                                        class="peer pl-[12px] pt-2 h-8 w-full border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" />
+
+                                    <span
+                                        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
+                                        First Name
+                                    </span>
+                                </label>
+                                <label for="UserEmail"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                                    <input type="email" id="UserEmail" placeholder="Email"
+                                        class="peer pl-[12px] pt-2 h-8 w-full border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" />
+
+                                    <span
+                                        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
+                                        First Name
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div id="address-user" class="">
+                            <div class="my-4 font-bold text-black text-base">Alamat Domisili <span
+                                    class="fon-bold text-red-600">*</span></div>
+                            <div class="gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                                <label for="UserEmail"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                                    <input type="email" id="UserEmail" placeholder="Email"
+                                        class="peer pl-[12px] pt-2 h-8 w-full border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" />
+
+                                    <span
+                                        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
+                                        Kabupaten
+                                    </span>
+                                </label>
+                                <label for="UserEmail"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                                    <input type="email" id="UserEmail" placeholder="Email"
+                                        class="peer pl-[12px] pt-2 h-8 w-full border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" />
+
+                                    <span
+                                        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
+                                        Kota
+                                    </span>
+                                </label>
+                                <label for="UserEmail"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                                    <input type="email" id="UserEmail" placeholder="Email"
+                                        class="peer pl-[12px] pt-2 h-8 w-full border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" />
+
+                                    <span
+                                        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
+                                        Provinsi
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="name-user" class="">
+                            <div class="my-4 font-bold text-black text-base">Paket Kostan <span
+                                    class="fon-bold text-red-600">*</span></div>
+                            <div class="gap-5 grid ">
+                                <label for="UserEmail"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                                    <input type="email" id="UserEmail" placeholder="Email"
+                                        class="peer pl-[12px] pt-2 h-8 w-full border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" />
+
+                                    <span
+                                        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
+                                        Pilih Paket
+                                    </span>
+                                </label>
+
+                            </div>
+                        </div>
+
+                        <div id="name-user" class="">
+                            <div class="my-4 font-bold text-black text-base">Status <span
+                                    class="fon-bold text-red-600">*</span></div>
+                            <div class="gap-5 grid ">
+                                <label for="UserEmail"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                                    <input type="email" id="UserEmail" placeholder="Email"
+                                        class="peer pl-[12px] pt-2 h-8 w-full border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" />
+
+                                    <span
+                                        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
+                                        First Name
+                                    </span>
+                                </label>
+
+                            </div>
+                        </div>
+
+                        <div id="name-user" class="">
+                            <div class="my-4 font-bold text-black text-base">Pekerjaan <span
+                                    class="fon-bold text-red-600">*</span></div>
+                            <div class="gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                                <label for="UserEmail"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                                    <input type="email" id="UserEmail" placeholder="Email"
+                                        class="peer pl-[12px] pt-2 h-8 w-full border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" />
+
+                                    <span
+                                        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
+                                        Jabatan
+                                    </span>
+                                </label>
+                                <label for="UserEmail"
+                                    class="relative block overflow-hidden rounded-md border border-gray-200 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                                    <input type="email" id="UserEmail" placeholder="Email"
+                                        class="peer pl-[12px] pt-2 h-8 w-full border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" />
+
+                                    <span
+                                        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
+                                        Alamat Kantor
+                                    </span>
+                                </label>
+                                <div class="">
+                                    <label for="UserEmail"
+                                        class="relative block overflow-hidden rounded-md border border-gray-200 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                                        <input type="email" id="UserEmail" placeholder="Email"
+                                            class="peer pl-[12px] pt-2 h-8 w-full border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" />
+
+                                        <span
+                                            class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs">
+                                            Pendapatan
+                                        </span>
+                                    </label>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="name-user" class="grid  md:grid-cols-1 lg:grid-cols-2">
+                            <div class="KTP-PDF">
+                                <div class="my-4 font-bold text-black text-base">KTP <span
+                                        class="fon-bold text-red-600">*</span></div>
+                                <div class="gap-5  ">
+                                    <div class="lg:max-w-xl w-auto p-6 bg-white rounded-md shadow-md">
+                                        <label id="drop-zone"
+                                            class="flex flex-col items-center w-full h-40 p-6 border-2 border-gray-300 border-dashed rounded-md cursor-pointer hover:border-gray-400 transition">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-gray-400 mb-2"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                            </svg>
+                                            <span class="text-sm text-gray-600">
+                                                Drop files here or
+                                                <span class="text-blue-600 underline">browse</span>
+                                            </span>
+                                            <input type="file" name="file_upload" class="hidden" id="file-input"
+                                                multiple>
+                                        </label>
+                                        <div id="preview-container" class="mt-4 grid grid-cols-2 gap-4"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="PROFILE-USER">
+                                <div class="my-4 font-bold text-black text-base">Profile User <span
+                                        class="fon-bold text-red-600">*</span></div>
+                                <div class="gap-5  ">
+                                    <div class="lg:max-w-xl w-auto p-6 bg-white rounded-md shadow-md">
+                                        <label id="drop-zone"
+                                            class="flex flex-col items-center w-full h-40 p-6 border-2 border-gray-300 border-dashed rounded-md cursor-pointer hover:border-gray-400 transition">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-gray-400 mb-2"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                            </svg>
+                                            <span class="text-sm text-gray-600">
+                                                Drop files here or
+                                                <span class="text-blue-600 underline">browse</span>
+                                            </span>
+                                            <input type="file" name="file_upload" class="hidden" id="file-input"
+                                                multiple>
+                                        </label>
+                                        <div id="preview-container" class="mt-4 grid grid-cols-2 gap-4"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Drop File -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropZone = document.getElementById('drop-zone');
+            const fileInput = document.getElementById('file-input');
+            const previewContainer = document.getElementById('preview-container');
+
+            dropZone.addEventListener('dragover', function (e) {
+                e.preventDefault();
+                dropZone.classList.add('border-gray-400');
+            });
+
+            dropZone.addEventListener('dragleave', function () {
+                dropZone.classList.remove('border-gray-400');
+            });
+
+            dropZone.addEventListener('drop', function (e) {
+                e.preventDefault();
+                dropZone.classList.remove('border-gray-400');
+
+                const files = e.dataTransfer.files;
+                handleFiles(files);
+            });
+
+            fileInput.addEventListener('change', function () {
+                const files = fileInput.files;
+                handleFiles(files);
+            });
+
+            function handleFiles(files) {
+                // Bersihkan konten preview sebelum menambahkan konten baru
+                previewContainer.innerHTML = '';
+
+                for (const file of files) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        const previewItem = createPreviewItem(e.target.result);
+                        previewContainer.appendChild(previewItem);
+                    };
+
+                    reader.readAsDataURL(file);
+                }
+            }
+
+            function createPreviewItem(imageSrc) {
+                const previewItem = document.createElement('div');
+                previewItem.classList.add('relative', 'group');
+
+                const removeButton = document.createElement('button');
+                removeButton.innerHTML = '&times;';
+                removeButton.classList.add('absolute', 'top-2', 'right-2', 'text-white', 'bg-red-500', 'border-none', 'rounded-md', 'px-2', 'py-1', 'opacity-0', 'group-hover:opacity-100', 'transition');
+
+                const previewImage = document.createElement('img');
+                previewImage.src = imageSrc;
+                previewImage.classList.add('w-full', 'h-32', 'object-cover', 'rounded-md', 'mb-2');
+
+                removeButton.addEventListener('click', function () {
+                    previewContainer.removeChild(previewItem);
+                });
+
+                previewItem.appendChild(previewImage);
+                previewItem.appendChild(removeButton);
+
+                return previewItem;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
