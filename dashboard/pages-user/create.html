@@ -393,68 +393,81 @@
             const dropZone = document.getElementById('drop-zone');
             const fileInput = document.getElementById('file-input');
             const previewContainer = document.getElementById('preview-container');
-
+    
             dropZone.addEventListener('dragover', function (e) {
                 e.preventDefault();
                 dropZone.classList.add('border-gray-400');
             });
-
+    
             dropZone.addEventListener('dragleave', function () {
                 dropZone.classList.remove('border-gray-400');
             });
-
+    
             dropZone.addEventListener('drop', function (e) {
                 e.preventDefault();
                 dropZone.classList.remove('border-gray-400');
-
+    
                 const files = e.dataTransfer.files;
                 handleFiles(files);
             });
-
+    
             fileInput.addEventListener('change', function () {
                 const files = fileInput.files;
                 handleFiles(files);
             });
-
+    
             function handleFiles(files) {
-                // Bersihkan konten preview sebelum menambahkan konten baru
-                previewContainer.innerHTML = '';
-
                 for (const file of files) {
                     const reader = new FileReader();
-
+    
                     reader.onload = function (e) {
-                        const previewItem = createPreviewItem(e.target.result);
+                        const previewItem = createPreviewItem(file.name, e.target.result);
                         previewContainer.appendChild(previewItem);
                     };
-
+    
                     reader.readAsDataURL(file);
                 }
             }
-
-            function createPreviewItem(imageSrc) {
+    
+            function createPreviewItem(fileName, fileSrc) {
                 const previewItem = document.createElement('div');
                 previewItem.classList.add('relative', 'group');
-
+    
                 const removeButton = document.createElement('button');
                 removeButton.innerHTML = '&times;';
                 removeButton.classList.add('absolute', 'top-2', 'right-2', 'text-white', 'bg-red-500', 'border-none', 'rounded-md', 'px-2', 'py-1', 'opacity-0', 'group-hover:opacity-100', 'transition');
-
-                const previewImage = document.createElement('img');
-                previewImage.src = imageSrc;
-                previewImage.classList.add('w-full', 'h-32', 'object-cover', 'rounded-md', 'mb-2');
-
+    
+                const fileNameText = document.createElement('p');
+                fileNameText.innerText = fileName;
+                fileNameText.classList.add('text-sm', 'text-gray-600', 'truncate', 'w-full', 'mb-2');
+                previewItem.appendChild(fileNameText);
+    
+                const extension = fileName.split('.').pop().toLowerCase();
+                const isImage = ['jpg', 'jpeg', 'png', 'gif', 'bmp'].includes(extension);
+    
+                if (isImage) {
+                    const previewImage = document.createElement('img');
+                    previewImage.src = fileSrc;
+                    previewImage.classList.add('w-full', 'h-32', 'object-cover', 'rounded-md', 'mb-2');
+                    previewItem.appendChild(previewImage);
+                } else {
+                    const defaultIcon = document.createElement('i');
+                    defaultIcon.classList.add('far', 'fa-file', 'text-3xl', 'text-gray-400', 'mb-2');
+                    previewItem.appendChild(defaultIcon);
+                }
+    
                 removeButton.addEventListener('click', function () {
                     previewContainer.removeChild(previewItem);
                 });
-
-                previewItem.appendChild(previewImage);
+    
                 previewItem.appendChild(removeButton);
-
+    
                 return previewItem;
             }
         });
     </script>
+    
+
 
 </body>
 
